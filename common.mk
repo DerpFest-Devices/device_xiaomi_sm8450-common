@@ -122,6 +122,10 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.common-V4-ndk \
     camera.device@1.0-impl \
     libcamera2ndk_vendor \
+    libutilscallstack.vendor:64 \
+    libcamera_metadata.vendor \
+    libexif.vendor \
+    libyuv.vendor \
     vendor.qti.hardware.camera.aon@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
@@ -138,6 +142,10 @@ PRODUCT_COPY_FILES += \
 # Capabilityconfigstore
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.capabilityconfigstore@1.0.vendor
+
+# CURL
+PRODUCT_PACKAGES += \
+    libcurl.vendor:64
 
 # Display
 PRODUCT_PACKAGES += \
@@ -272,7 +280,8 @@ PRODUCT_COPY_FILES += \
 
 # JSON
 PRODUCT_PACKAGES += \
-    libjson
+    libjson \
+    libjsoncpp.vendor
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -460,6 +469,10 @@ $(foreach sku, taro diwali cape ukee, \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.servicetracker@1.2.vendor
 
+# SQLite
+PRODUCT_PACKAGES += \
+    libsqlite.vendor:64
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
@@ -516,7 +529,8 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.3-service-qti
+    android.hardware.usb@1.3-service-qti \
+    libusbhost.vendor
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
@@ -590,4 +604,5 @@ PRODUCT_COPY_FILES += \
 # WiFi Display
 PRODUCT_PACKAGES += \
     libnl \
+    libpng.vendor \
     libwfdaac_vendor
